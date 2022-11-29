@@ -74,7 +74,8 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.setBackground(new java.awt.Color(102, 0, 153));
+        jTabbedPane1.setBackground(new java.awt.Color(102, 255, 255));
+        jTabbedPane1.setForeground(new java.awt.Color(102, 255, 255));
         jTabbedPane1.setEnabled(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
