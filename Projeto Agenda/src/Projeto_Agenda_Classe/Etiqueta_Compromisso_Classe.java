@@ -1,21 +1,24 @@
 package Projeto_Agenda_Classe;
 
-/**@author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza*/
+/**
+ * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
+ */
 public class Etiqueta_Compromisso_Classe {
-    public String x;
 
-    public Etiqueta_Compromisso_Classe(String x) {
-        this.x = x;
+    public String titulo;
+
+    public Etiqueta_Compromisso_Classe(String titulo) {
+        this.titulo = titulo;
     }
 
     public Etiqueta_Compromisso_Classe() {
     }
 
-    public int compareTo(Usuario_Classe x) {
-        if (this.x.compareTo(x.nome) > 0) {
+    public int compareTo(Etiqueta_Compromisso_Classe c) {
+        if (this.titulo.compareTo(c.titulo) > 0) {
             return 1;
         }
-        if (this.x.compareTo(x.nome) < 0) {
+        if (this.titulo.compareTo(c.titulo) < 0) {
             return -1;
         }
 
@@ -24,8 +27,14 @@ public class Etiqueta_Compromisso_Classe {
 
     @Override
     public String toString() {
-        return this.x + "," + this;
-    }  
-    
-    //alt+insert = get setter    
+        return this.titulo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 }
