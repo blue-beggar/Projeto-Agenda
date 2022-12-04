@@ -5,18 +5,17 @@ package Projeto_Agenda_Classe;
  */
 public class Endereco_Classe {
 
-    public static String logradouro, complemento, cidade, estado;
+    public static String logradouro, bairro,  complemento, cidade, estado;
     public static int CEP, IdEndereco;
 
-    public Endereco_Classe(String logradouro, String complemento, String CEP,String cidade,String estado) {
+    
+    public Endereco_Classe(String logradouro, String bairro, int CEP, String complemento, String cidade,String estado) {
         this.logradouro = logradouro;
+        this.bairro = bairro;
         this.complemento = complemento;
-        this.CEP = Integer.parseInt(CEP);
+        this.CEP = CEP;
         this.cidade = cidade;
         this.estado = estado;
-    }
-
-    public Endereco_Classe() {
     }
 
     @Override

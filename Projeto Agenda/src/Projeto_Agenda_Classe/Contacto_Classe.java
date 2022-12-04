@@ -8,10 +8,10 @@ public class Contacto_Classe {
     public static String email;
     public static long telefone1, telefone2;
 
-    public Contacto_Classe(String telefone1, String telefone2, String email) {
+    public Contacto_Classe(Long telefone1, Long telefone2, String email) {
         this.email = email;
-        this.telefone1 = Long.parseLong(telefone1);
-        this.telefone2 = Long.parseLong(telefone2);
+        this.telefone1 = telefone1;
+        this.telefone2 = telefone2;
     }
 
     public Contacto_Classe() {

@@ -11,17 +11,28 @@ public class Usuario_Classe {
     public static Date data_nascU;
     public Contacto_Classe contacto_classe;
     public Endereco_Classe endereco_classe;
+    
 
-    public Usuario_Classe(String usuarioNomeU, String nomeU, String data_nascU, String senha) {
-        this.usuarioNomeU = usuarioNomeU;
+    public Usuario_Classe(String nomeU, Date data_nascU) {
+        this.data_nascU = data_nascU;
         this.nomeU = nomeU;
-        this.senha = senha;
-        this.senha = senha;
         //senha
     }
 
     public Usuario_Classe() {
     }
+
+    public Usuario_Classe(String Usuario, String Senhahex) {
+        this.usuarioNomeU = Usuario;
+        this.senha = Senhahex;
+    }
+
+    public Usuario_Classe(String Nome, Date Data_nasc, long Telefone1, long Telefone2) {
+        this.data_nascU = Data_nasc;
+        this.nomeU = Nome;
+    }
+    
+    
 
     public int compareTo(Usuario_Classe x) {
         if (this.nomeU.compareTo(x.nomeU) > 0) {

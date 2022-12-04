@@ -4,6 +4,8 @@
  */
 package Projeto_Agenda_Tela;
 
+import Projeto_Agenda_Classe.Contacto_Classe;
+import Projeto_Agenda_Classe.Endereco_Classe;
 import Projeto_Agenda_Classe.Usuario_Classe;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +16,8 @@ import java.util.Date;
  */
 public class Cadastro_Tela extends javax.swing.JFrame {
     ArrayList<Usuario_Classe> CadUsuario = new ArrayList<Usuario_Classe>(1);
+    ArrayList<Contacto_Classe> CadContacto = new ArrayList<Contacto_Classe>(1);
+    ArrayList<Endereco_Classe> CadEndereco = new ArrayList<Endereco_Classe>(1);
    
     private String Usuario;
     private String Senhahex;
@@ -26,10 +30,9 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private String Email;
     
     private String Logradouro; 
-    private int Numero;
     private String Bairro;
-    private String Complemento;
     private int CEP;
+    private String Complemento;
     private String Cidade;     
     private String Sigla_estado;
     
@@ -373,37 +376,34 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BotaoAnterior2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoConcluirCadastro))
+                        .addComponent(BotaoAnterior2))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(212, 212, 212)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(212, 212, 212)
-                                .addComponent(jLabel10))
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(CriarBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel15))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CriarLogradouroUsuario)
+                                    .addComponent(CriarCEPUsuario)
+                                    .addComponent(CriarComplementoUsuario)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel16)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(CriarBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel15))
+                                        .addComponent(CriarCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(CriarLogradouroUsuario)
-                                            .addComponent(CriarCEPUsuario)
-                                            .addComponent(CriarComplementoUsuario)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addComponent(CriarCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 86, Short.MAX_VALUE)))
+                                        .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(BotaoConcluirCadastro)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -433,9 +433,9 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BotaoAnterior2)
-                    .addComponent(BotaoConcluirCadastro))
+                    .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -472,7 +472,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private void BotaoProximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo2ActionPerformed
         Nome = CriarNomeUsuario.getText();
         Data_nasc = CriarDataNasc.getDate();
-        Telefone1 = Integer.parseInt(CriarTelefone1Usuario.getText());
+        Telefone1 = Long.parseLong(CriarTelefone1Usuario.getText());
         
         if(CriarTelefone2Usuario.getText().isEmpty()){
             Telefone2 = 0;
@@ -481,12 +481,13 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         }
         Email = CriarEmailUsuario.getText();
         
-        Usuario_Classe DadosUsuario = new Usuario_Classe(this.Nome, this.Data_nasc, this.Telefone1, this.Telefone2);
+        Usuario_Classe DadosUsuario = new Usuario_Classe(this.Nome, this.Data_nasc);
+        Contacto_Classe DadosComunic = new Contacto_Classe (this.Telefone1, this.Telefone2, this.Email);
         
+        CadContacto.add(DadosComunic);
         CadUsuario.add(DadosUsuario);
         CadUsuario.get(0).setNomeU(Nome);
         CadUsuario.get(0).setData_nascU(Data_nasc);
-        CadUsuario.get(0).setTelefone1(Telefone1);
         
         this.jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_BotaoProximo2ActionPerformed
@@ -500,7 +501,22 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_CriarNomeUsuarioActionPerformed
 
     private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
-        // TODO add your handling code here:
+
+        Logradouro = CriarLogradouroUsuario.getText();
+        Bairro = CriarBairroUsuario.getText();
+        CEP = Integer.parseInt(CriarCEPUsuario.getText());
+        Complemento = CriarComplementoUsuario.getText();
+        Cidade = CriarCidadeUsuario.getText();
+        Sigla_estado = CriarEstadoUsuario.getSelectedItem().toString();
+        
+        Endereco_Classe DadosEnd = new Endereco_Classe(this.Logradouro, this.Bairro, this.CEP, this.Complemento, this.Cidade, this.Sigla_estado);
+        CadEndereco.add(DadosEnd);
+        
+        Login_Tela logintela = new Login_Tela();
+
+        this.setVisible(false);
+        logintela.setLocationRelativeTo(null);
+        logintela.setVisible(true);
     }//GEN-LAST:event_BotaoConcluirCadastroActionPerformed
 
     private void BotaoVoltarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarLoginActionPerformed
