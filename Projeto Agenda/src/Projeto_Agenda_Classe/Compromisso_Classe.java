@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Compromisso_Classe {
 
+    public static int IdCompromisso;
     public static String titulo, descricao;
     public static Date DtInicio, DtFim;
     public Contato_Classe contato_classe;
@@ -35,6 +36,14 @@ public class Compromisso_Classe {
     @Override
     public String toString() {
         return this.titulo + "," + this.descricao + "," + this.DtInicio + "," + this.DtFim;
+    }
+
+    public static int getIdCompromisso() {
+        return IdCompromisso;
+    }
+
+    public static void setIdCompromisso(int IdCompromisso) {
+        Compromisso_Classe.IdCompromisso = IdCompromisso;
     }
 
     public static String getTitulo() {

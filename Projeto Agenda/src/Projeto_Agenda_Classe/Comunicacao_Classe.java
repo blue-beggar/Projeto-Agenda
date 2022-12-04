@@ -3,18 +3,16 @@ package Projeto_Agenda_Classe;
 /**
  * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
  */
-public class Contacto_Classe {
+public class Comunicacao_Classe {
 
+    public static int IdComunicacao;
     public static String email;
     public static long telefone1, telefone2;
 
-    public Contacto_Classe(Long telefone1, Long telefone2, String email) {
+    public Comunicacao_Classe(String telefone1, String telefone2, String email) {
         this.email = email;
-        this.telefone1 = telefone1;
-        this.telefone2 = telefone2;
-    }
-
-    public Contacto_Classe() {
+        this.telefone1 = Long.parseLong(telefone1);
+        this.telefone2 = Long.parseLong(telefone2);
     }
 
     @Override
@@ -22,12 +20,20 @@ public class Contacto_Classe {
         return this.email + "," + this.telefone1 + "," + this.telefone2 + ",";
     }
 
+    public static int getIdComunicacao() {
+        return IdComunicacao;
+    }
+
+    public static void setIdComunicacao(int IdComunicacao) {
+        Comunicacao_Classe.IdComunicacao = IdComunicacao;
+    }
+
     public static String getEmail() {
         return email;
     }
 
     public static void setEmail(String email) {
-        Contacto_Classe.email = email;
+        Comunicacao_Classe.email = email;
     }
 
     public static long getTelefone1() {
@@ -35,7 +41,7 @@ public class Contacto_Classe {
     }
 
     public static void setTelefone1(long telefone1) {
-        Contacto_Classe.telefone1 = telefone1;
+        Comunicacao_Classe.telefone1 = telefone1;
     }
 
     public static long getTelefone2() {
@@ -43,7 +49,7 @@ public class Contacto_Classe {
     }
 
     public static void setTelefone2(long telefone2) {
-        Contacto_Classe.telefone2 = telefone2;
+        Comunicacao_Classe.telefone2 = telefone2;
     }
-    
+
 }

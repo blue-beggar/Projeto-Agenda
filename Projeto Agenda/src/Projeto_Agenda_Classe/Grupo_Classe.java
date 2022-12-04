@@ -5,6 +5,7 @@ package Projeto_Agenda_Classe;
  */
 public class Grupo_Classe {
 
+    public static int IdGrupo;
     public static String titulo;
     public static boolean grupado;
 
@@ -12,8 +13,6 @@ public class Grupo_Classe {
         this.titulo = titulo;
     }
 
-    public Grupo_Classe() {
-    }
 
     public int compareTo(Grupo_Classe c) {
         if (this.titulo.compareTo(c.titulo) > 0) {
@@ -30,7 +29,15 @@ public class Grupo_Classe {
     public String toString() {
         return this.titulo;
     }
-    
+
+    public static int getIdGrupo() {
+        return IdGrupo;
+    }
+
+    public static void setIdGrupo(int IdGrupo) {
+        Grupo_Classe.IdGrupo = IdGrupo;
+    }
+
     public static boolean isGrupado() {
         return grupado;
     }

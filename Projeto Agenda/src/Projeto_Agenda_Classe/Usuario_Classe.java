@@ -9,7 +9,7 @@ public class Usuario_Classe {
 
     public static String usuarioNomeU, nomeU, senha;
     public static Date data_nascU;
-    public Contacto_Classe contacto_classe;
+    public Comunicacao_Classe comunicacao_classe;
     public Endereco_Classe endereco_classe;
     
 
@@ -17,9 +17,6 @@ public class Usuario_Classe {
         this.data_nascU = data_nascU;
         this.nomeU = nomeU;
         //senha
-    }
-
-    public Usuario_Classe() {
     }
 
     public Usuario_Classe(String Usuario, String Senhahex) {
@@ -82,12 +79,12 @@ public class Usuario_Classe {
         Usuario_Classe.data_nascU = data_nascU;
     }
 
-    public Contacto_Classe getContacto_classe() {
-        return contacto_classe;
+    public Comunicacao_Classe getComunicacao_classe() {
+        return comunicacao_classe;
     }
 
-    public void setContacto_classe(Contacto_Classe contacto_classe) {
-        this.contacto_classe = contacto_classe;
+    public void setComunicacao_classe(Comunicacao_Classe comunicacao_classe) {
+        this.comunicacao_classe = comunicacao_classe;
     }
 
     public Endereco_Classe getEndereco_classe() {
@@ -97,5 +94,5 @@ public class Usuario_Classe {
     public void setEndereco_classe(Endereco_Classe endereco_classe) {
         this.endereco_classe = endereco_classe;
     }
-
+    
 }

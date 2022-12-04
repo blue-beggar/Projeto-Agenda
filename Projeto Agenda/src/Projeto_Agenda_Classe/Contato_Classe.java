@@ -9,15 +9,12 @@ public class Contato_Classe {
 
     public static String nomeC;
     public static Date ndata_nascC;
-    public Contacto_Classe contacto_classe;
+    public Comunicacao_Classe comunicacao_classe;
     public Endereco_Classe endereco_classe;
     public Grupo_Classe grupo_classe;
 
     public Contato_Classe(String nome) {
         this.nomeC = nome;
-    }
-
-    public Contato_Classe() {
     }
 
     public int compareTo(Contato_Classe x) {
@@ -53,12 +50,12 @@ public class Contato_Classe {
         Contato_Classe.ndata_nascC = ndata_nascC;
     }
 
-    public Contacto_Classe getContacto_classe() {
-        return contacto_classe;
+    public Comunicacao_Classe getComunicacao_classe() {
+        return comunicacao_classe;
     }
 
-    public void setContacto_classe(Contacto_Classe contacto_classe) {
-        this.contacto_classe = contacto_classe;
+    public void setComunicacao_classe(Comunicacao_Classe comunicacao_classe) {
+        this.comunicacao_classe = comunicacao_classe;
     }
 
     public Endereco_Classe getEndereco_classe() {
