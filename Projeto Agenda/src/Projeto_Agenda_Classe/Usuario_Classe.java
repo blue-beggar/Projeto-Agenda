@@ -9,10 +9,8 @@ public class Usuario_Classe {
     public Contacto_Classe contacto_classe;
     public Endereco_Classe endereco_classe;
 
-    public Usuario_Classe(String usuarioNomeU, String nomeU, String data_nascU, String senha) {
+    public Usuario_Classe(String usuarioNomeU, String senha) {
         this.usuarioNomeU = usuarioNomeU;
-        this.nomeU = nomeU;
-        this.data_nascU = data_nascU;
         this.senha = senha;
         //senha
     }

@@ -6,6 +6,7 @@ package Projeto_Agenda_Tela;
 
 import Projeto_Agenda_Classe.Usuario_Classe;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -14,6 +15,24 @@ import java.util.ArrayList;
 public class Cadastro_Tela extends javax.swing.JFrame {
     ArrayList<Usuario_Classe> CadUsuario = new ArrayList<Usuario_Classe>(1);
    
+    private String Usuario;
+    private String Senhahex;
+    private String SenhahexConfirm;
+    
+    private String Nome;
+    private Date Data_nasc;
+    private long Telefone1;
+    private long Telefone2;
+    private String Email;
+    
+    private String Logradouro; 
+    private int Numero;
+    private String Bairro;
+    private String Complemento;
+    private int CEP;
+    private String Cidade;     
+    private String Sigla_estado;
+    
     public Cadastro_Tela() {
         initComponents();
     }
@@ -47,12 +66,12 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        NomeUsuario = new javax.swing.JTextField();
+        CriarNomeUsuario = new javax.swing.JTextField();
         CriarEmailUsuario = new javax.swing.JTextField();
         CriarTelefone1Usuario = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         CriarTelefone2Usuario = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        CriarDataNasc = new com.toedter.calendar.JDateChooser();
         jPanel4 = new javax.swing.JPanel();
         BotaoAnterior2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -63,6 +82,11 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         CriarCEPUsuario = new javax.swing.JTextField();
         CriarComplementoUsuario = new javax.swing.JTextField();
         BotaoConcluirCadastro = new javax.swing.JButton();
+        CriarCidadeUsuario = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        CriarEstadoUsuario = new javax.swing.JComboBox<>();
+        CriarBairroUsuario = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -164,7 +188,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(CriarConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoProximo1)
                     .addComponent(BotaoVoltarLogin))
@@ -202,9 +226,9 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         jLabel9.setText("Telefone 1");
 
-        NomeUsuario.addActionListener(new java.awt.event.ActionListener() {
+        CriarNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeUsuarioActionPerformed(evt);
+                CriarNomeUsuarioActionPerformed(evt);
             }
         });
 
@@ -242,11 +266,11 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(NomeUsuario))
+                                .addComponent(CriarNomeUsuario))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(CriarDataNasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
@@ -265,11 +289,11 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(NomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CriarNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CriarDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -318,14 +342,33 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        CriarCidadeUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CriarCidadeUsuarioActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Cidade");
+
+        CriarEstadoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        CriarEstadoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CriarEstadoUsuarioActionPerformed(evt);
+            }
+        });
+
+        CriarBairroUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CriarBairroUsuarioActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Bairro");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(201, 201, 201))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -334,17 +377,33 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BotaoConcluirCadastro))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel11))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CriarLogradouroUsuario)
-                            .addComponent(CriarCEPUsuario)
-                            .addComponent(CriarComplementoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 75, Short.MAX_VALUE)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(jLabel10))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(CriarBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel15))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(CriarLogradouroUsuario)
+                                            .addComponent(CriarCEPUsuario)
+                                            .addComponent(CriarComplementoUsuario)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(CriarCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addGap(0, 86, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -356,15 +415,24 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(CriarLogradouroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(CriarCEPUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CriarBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CriarCEPUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(CriarComplementoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CriarCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoAnterior2)
                     .addComponent(BotaoConcluirCadastro))
@@ -388,7 +456,12 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoProximo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo1ActionPerformed
-
+        Usuario = CriarUsuario.getText();
+        
+        Usuario_Classe loginUsuario = new Usuario_Classe(this.Usuario,this.Senhahex);
+        
+        CadUsuario.add(loginUsuario);
+        
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_BotaoProximo1ActionPerformed
 
@@ -397,6 +470,24 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoAnterior1ActionPerformed
 
     private void BotaoProximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo2ActionPerformed
+        Nome = CriarNomeUsuario.getText();
+        Data_nasc = CriarDataNasc.getDate();
+        Telefone1 = Integer.parseInt(CriarTelefone1Usuario.getText());
+        
+        if(CriarTelefone2Usuario.getText().isEmpty()){
+            Telefone2 = 0;
+        }else{       
+            Telefone2 = Integer.parseInt(CriarTelefone2Usuario.getText()); 
+        }
+        Email = CriarEmailUsuario.getText();
+        
+        Usuario_Classe DadosUsuario = new Usuario_Classe(this.Nome, this.Data_nasc, this.Telefone1, this.Telefone2);
+        
+        CadUsuario.add(DadosUsuario);
+        CadUsuario.get(0).setNomeU(Nome);
+        CadUsuario.get(0).setData_nascU(Data_nasc);
+        CadUsuario.get(0).setTelefone1(Telefone1);
+        
         this.jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_BotaoProximo2ActionPerformed
 
@@ -404,16 +495,20 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_BotaoAnterior2ActionPerformed
 
-    private void NomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeUsuarioActionPerformed
+    private void CriarNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarNomeUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeUsuarioActionPerformed
+    }//GEN-LAST:event_CriarNomeUsuarioActionPerformed
 
     private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoConcluirCadastroActionPerformed
 
     private void BotaoVoltarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarLoginActionPerformed
-        // TODO add your handling code here:
+        Login_Tela logintela = new Login_Tela();
+
+        this.setVisible(false);
+        logintela.setLocationRelativeTo(null);
+        logintela.setVisible(true);
     }//GEN-LAST:event_BotaoVoltarLoginActionPerformed
 
     private void CriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarUsuarioActionPerformed
@@ -427,6 +522,18 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private void CriarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CriarSenhaActionPerformed
+
+    private void CriarEstadoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarEstadoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CriarEstadoUsuarioActionPerformed
+
+    private void CriarCidadeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarCidadeUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CriarCidadeUsuarioActionPerformed
+
+    private void CriarBairroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarBairroUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CriarBairroUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -471,23 +578,28 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private javax.swing.JButton BotaoProximo1;
     private javax.swing.JButton BotaoProximo2;
     private javax.swing.JButton BotaoVoltarLogin;
+    private javax.swing.JTextField CriarBairroUsuario;
     private javax.swing.JTextField CriarCEPUsuario;
+    private javax.swing.JTextField CriarCidadeUsuario;
     private javax.swing.JTextField CriarComplementoUsuario;
     private javax.swing.JPasswordField CriarConfirmarSenha;
+    private com.toedter.calendar.JDateChooser CriarDataNasc;
     private javax.swing.JTextField CriarEmailUsuario;
+    private javax.swing.JComboBox<String> CriarEstadoUsuario;
     private javax.swing.JTextField CriarLogradouroUsuario;
+    private javax.swing.JTextField CriarNomeUsuario;
     private javax.swing.JPasswordField CriarSenha;
     private javax.swing.JTextField CriarTelefone1Usuario;
     private javax.swing.JTextField CriarTelefone2Usuario;
     private javax.swing.JTextField CriarUsuario;
-    private javax.swing.JTextField NomeUsuario;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
