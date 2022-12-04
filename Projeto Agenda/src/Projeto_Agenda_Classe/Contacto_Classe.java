@@ -5,8 +5,8 @@ package Projeto_Agenda_Classe;
  */
 public class Contacto_Classe {
 
-    public String email;
-    public int telefone1, telefone2;
+    public static String email;
+    public static long telefone1, telefone2;
 
     public Contacto_Classe(String telefone1, String telefone2, String email) {
         this.email = email;
@@ -22,28 +22,28 @@ public class Contacto_Classe {
         return this.email + "," + this.telefone1 + "," + this.telefone2 + ",";
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        Contacto_Classe.email = email;
     }
 
-    public int getTelefone1() {
+    public static long getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(int telefone1) {
-        this.telefone1 = telefone1;
+    public static void setTelefone1(long telefone1) {
+        Contacto_Classe.telefone1 = telefone1;
     }
 
-    public int getTelefone2() {
+    public static long getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(int telefone2) {
-        this.telefone2 = telefone2;
+    public static void setTelefone2(long telefone2) {
+        Contacto_Classe.telefone2 = telefone2;
     }
-
+    
 }

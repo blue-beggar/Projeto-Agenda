@@ -5,9 +5,9 @@ package Projeto_Agenda_Classe;
  */
 public class Usuario_Classe {
 
-    public String usuarioNomeU, nomeU, data_nascU, senha;
-    public Endereco_Classe logradouro, CEP, complemento;
-    public Contacto_Classe email, telefone1, telefone2;
+    public static String usuarioNomeU, nomeU, data_nascU, senha;
+    public Contacto_Classe contacto_classe;
+    public Endereco_Classe endereco_classe;
 
     public Usuario_Classe(String usuarioNomeU, String nomeU, String data_nascU, String senha) {
         this.usuarioNomeU = usuarioNomeU;
@@ -68,52 +68,20 @@ public class Usuario_Classe {
         this.senha = senha;
     }
 
-    public Endereco_Classe getLogradouro() {
-        return logradouro;
+    public Contacto_Classe getContacto_classe() {
+        return contacto_classe;
     }
 
-    public void setLogradouro(Endereco_Classe logradouro) {
-        this.logradouro = logradouro;
+    public void setContacto_classe(Contacto_Classe contacto_classe) {
+        this.contacto_classe = contacto_classe;
     }
 
-    public Endereco_Classe getCEP() {
-        return CEP;
+    public Endereco_Classe getEndereco_classe() {
+        return endereco_classe;
     }
 
-    public void setCEP(Endereco_Classe CEP) {
-        this.CEP = CEP;
+    public void setEndereco_classe(Endereco_Classe endereco_classe) {
+        this.endereco_classe = endereco_classe;
     }
-
-    public Endereco_Classe getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(Endereco_Classe complemento) {
-        this.complemento = complemento;
-    }
-
-    public Contacto_Classe getEmail() {
-        return email;
-    }
-
-    public void setEmail(Contacto_Classe email) {
-        this.email = email;
-    }
-
-    public Contacto_Classe getTelefone1() {
-        return telefone1;
-    }
-
-    public void setTelefone1(Contacto_Classe telefone1) {
-        this.telefone1 = telefone1;
-    }
-
-    public Contacto_Classe getTelefone2() {
-        return telefone2;
-    }
-
-    public void setTelefone2(Contacto_Classe telefone2) {
-        this.telefone2 = telefone2;
-    }
-
+    
 }

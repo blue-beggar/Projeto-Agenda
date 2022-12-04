@@ -5,9 +5,10 @@ package Projeto_Agenda_Classe;
  */
 public class Contato_Classe {
 
-    public String nomeC, data_nascC;
-    public Endereco_Classe logradouro, CEP, complemento;
-    public Contacto_Classe email, telefone1, telefone2;
+    public static String nomeC, data_nascC;
+    public Contacto_Classe contacto_classe;
+    public Endereco_Classe endereco_classe;
+    public Grupo_Classe grupo_classe;
 
     public Contato_Classe(String nome, String data_nasc) {
         this.nomeC = nome;
@@ -34,30 +35,14 @@ public class Contato_Classe {
         return this.nomeC + "," + this.data_nascC;
     }
 
-    public Endereco_Classe getLogradouro() {
-        return logradouro;
+    public Grupo_Classe getGrupo_classe() {
+        return grupo_classe;
     }
 
-    public void setLogradouro(Endereco_Classe logradouro) {
-        this.logradouro = logradouro;
+    public void setGrupo_classe(Grupo_Classe grupo_classe) {
+        this.grupo_classe = grupo_classe;
     }
-
-    public Endereco_Classe getCEP() {
-        return CEP;
-    }
-
-    public void setCEP(Endereco_Classe CEP) {
-        this.CEP = CEP;
-    }
-
-    public Endereco_Classe getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(Endereco_Classe complemento) {
-        this.complemento = complemento;
-    }
-
+    
     public String getNomeC() {
         return nomeC;
     }
@@ -74,28 +59,20 @@ public class Contato_Classe {
         this.data_nascC = data_nascC;
     }
 
-    public Contacto_Classe getEmail() {
-        return email;
+    public Contacto_Classe getContacto_classe() {
+        return contacto_classe;
     }
 
-    public void setEmail(Contacto_Classe email) {
-        this.email = email;
+    public void setContacto_classe(Contacto_Classe contacto_classe) {
+        this.contacto_classe = contacto_classe;
     }
 
-    public Contacto_Classe getTelefone1() {
-        return telefone1;
+    public Endereco_Classe getEndereco_classe() {
+        return endereco_classe;
     }
 
-    public void setTelefone1(Contacto_Classe telefone1) {
-        this.telefone1 = telefone1;
+    public void setEndereco_classe(Endereco_Classe endereco_classe) {
+        this.endereco_classe = endereco_classe;
     }
-
-    public Contacto_Classe getTelefone2() {
-        return telefone2;
-    }
-
-    public void setTelefone2(Contacto_Classe telefone2) {
-        this.telefone2 = telefone2;
-    }
-
+    
 }

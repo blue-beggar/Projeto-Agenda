@@ -5,10 +5,10 @@ package Projeto_Agenda_Classe;
  */
 public class Compromisso_Classe {
 
-    public String titulo, descricao, DtInicio, DtFim;
-    public Contato_Classe nomeC, emailC;
-    public Usuario_Classe nomeU, emailU;
-    public Endereco_Classe logradouro, CEP, complemento;
+    public static String titulo, descricao, DtInicio, DtFim;
+    public Contato_Classe contato_classe;
+    public Usuario_Classe usuario_classe;
+    public Endereco_Classe endereco_classe;
 
     public Compromisso_Classe(String titulo, String descricao, String DtInicio, String DtFim) {
         this.titulo = titulo;
@@ -68,60 +68,28 @@ public class Compromisso_Classe {
         this.DtFim = DtFim;
     }
 
-    public Contato_Classe getNomeC() {
-        return nomeC;
+    public Contato_Classe getContato_classe() {
+        return contato_classe;
     }
 
-    public void setNomeC(Contato_Classe nomeC) {
-        this.nomeC = nomeC;
+    public void setContato_classe(Contato_Classe contato_classe) {
+        this.contato_classe = contato_classe;
     }
 
-    public Contato_Classe getEmailC() {
-        return emailC;
+    public Usuario_Classe getUsuario_classe() {
+        return usuario_classe;
     }
 
-    public void setEmailC(Contato_Classe emailC) {
-        this.emailC = emailC;
+    public void setUsuario_classe(Usuario_Classe usuario_classe) {
+        this.usuario_classe = usuario_classe;
     }
 
-    public Usuario_Classe getNomeU() {
-        return nomeU;
+    public Endereco_Classe getEndereco_classe() {
+        return endereco_classe;
     }
 
-    public void setNomeU(Usuario_Classe nomeU) {
-        this.nomeU = nomeU;
+    public void setEndereco_classe(Endereco_Classe endereco_classe) {
+        this.endereco_classe = endereco_classe;
     }
-
-    public Usuario_Classe getEmailU() {
-        return emailU;
-    }
-
-    public void setEmailU(Usuario_Classe emailU) {
-        this.emailU = emailU;
-    }
-
-    public Endereco_Classe getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(Endereco_Classe logradouro) {
-        this.logradouro = logradouro;
-    }
-
-    public Endereco_Classe getCEP() {
-        return CEP;
-    }
-
-    public void setCEP(Endereco_Classe CEP) {
-        this.CEP = CEP;
-    }
-
-    public Endereco_Classe getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(Endereco_Classe complemento) {
-        this.complemento = complemento;
-    }
-
+    
 }

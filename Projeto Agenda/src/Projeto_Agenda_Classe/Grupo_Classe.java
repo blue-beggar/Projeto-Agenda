@@ -3,18 +3,19 @@ package Projeto_Agenda_Classe;
 /**
  * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
  */
-public class Etiqueta_Compromisso_Classe {
+public class Grupo_Classe {
 
-    public String titulo;
+    public static String titulo;
+    public static boolean grupado;
 
-    public Etiqueta_Compromisso_Classe(String titulo) {
+    public Grupo_Classe(String titulo) {
         this.titulo = titulo;
     }
 
-    public Etiqueta_Compromisso_Classe() {
+    public Grupo_Classe() {
     }
 
-    public int compareTo(Etiqueta_Compromisso_Classe c) {
+    public int compareTo(Grupo_Classe c) {
         if (this.titulo.compareTo(c.titulo) > 0) {
             return 1;
         }
@@ -28,6 +29,14 @@ public class Etiqueta_Compromisso_Classe {
     @Override
     public String toString() {
         return this.titulo;
+    }
+    
+    public static boolean isGrupado() {
+        return grupado;
+    }
+
+    public static void setGrupado(boolean grupado) {
+        Grupo_Classe.grupado = grupado;
     }
 
     public String getTitulo() {
