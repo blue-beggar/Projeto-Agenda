@@ -10,8 +10,8 @@ public class Contacto_Classe {
 
     public Contacto_Classe(String telefone1, String telefone2, String email) {
         this.email = email;
-        this.telefone1 = Integer.parseInt(telefone1);
-        this.telefone2 = Integer.parseInt(telefone2);
+        this.telefone1 = Long.parseLong(telefone1);
+        this.telefone2 = Long.parseLong(telefone2);
     }
 
     public Contacto_Classe() {

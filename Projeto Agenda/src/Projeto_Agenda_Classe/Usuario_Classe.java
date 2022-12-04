@@ -1,16 +1,21 @@
 package Projeto_Agenda_Classe;
 
+import java.util.Date;
+
 /**
  * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
  */
 public class Usuario_Classe {
 
-    public static String usuarioNomeU, nomeU, data_nascU, senha;
+    public static String usuarioNomeU, nomeU, senha;
+    public static Date data_nascU;
     public Contacto_Classe contacto_classe;
     public Endereco_Classe endereco_classe;
 
-    public Usuario_Classe(String usuarioNomeU, String senha) {
+    public Usuario_Classe(String usuarioNomeU, String nomeU, String data_nascU, String senha) {
         this.usuarioNomeU = usuarioNomeU;
+        this.nomeU = nomeU;
+        this.senha = senha;
         this.senha = senha;
         //senha
     }
@@ -34,36 +39,36 @@ public class Usuario_Classe {
         return this.nomeU + "," + this.data_nascU;//senha
     }
 
-    public String getUsuarioNomeU() {
+    public static String getUsuarioNomeU() {
         return usuarioNomeU;
     }
 
-    public void setUsuarioNomeU(String usuarioNomeU) {
-        this.usuarioNomeU = usuarioNomeU;
+    public static void setUsuarioNomeU(String usuarioNomeU) {
+        Usuario_Classe.usuarioNomeU = usuarioNomeU;
     }
 
-    public String getNomeU() {
+    public static String getNomeU() {
         return nomeU;
     }
 
-    public void setNomeU(String nomeU) {
-        this.nomeU = nomeU;
+    public static void setNomeU(String nomeU) {
+        Usuario_Classe.nomeU = nomeU;
     }
 
-    public String getData_nascU() {
-        return data_nascU;
-    }
-
-    public void setData_nascU(String data_nascU) {
-        this.data_nascU = data_nascU;
-    }
-
-    public String getSenha() {
+    public static String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public static void setSenha(String senha) {
+        Usuario_Classe.senha = senha;
+    }
+
+    public static Date getData_nascU() {
+        return data_nascU;
+    }
+
+    public static void setData_nascU(Date data_nascU) {
+        Usuario_Classe.data_nascU = data_nascU;
     }
 
     public Contacto_Classe getContacto_classe() {
@@ -81,5 +86,5 @@ public class Usuario_Classe {
     public void setEndereco_classe(Endereco_Classe endereco_classe) {
         this.endereco_classe = endereco_classe;
     }
-    
+
 }

@@ -1,11 +1,14 @@
 package Projeto_Agenda_Classe;
 
+import java.util.Date;
+
 /**
  * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
  */
 public class Compromisso_Classe {
 
-    public static String titulo, descricao, DtInicio, DtFim;
+    public static String titulo, descricao;
+    public static Date DtInicio, DtFim;
     public Contato_Classe contato_classe;
     public Usuario_Classe usuario_classe;
     public Endereco_Classe endereco_classe;
@@ -13,8 +16,6 @@ public class Compromisso_Classe {
     public Compromisso_Classe(String titulo, String descricao, String DtInicio, String DtFim) {
         this.titulo = titulo;
         this.descricao = descricao;
-        this.DtInicio = DtInicio;
-        this.DtFim = DtFim;
     }
 
     public Compromisso_Classe() {
@@ -36,36 +37,36 @@ public class Compromisso_Classe {
         return this.titulo + "," + this.descricao + "," + this.DtInicio + "," + this.DtFim;
     }
 
-    public String getTitulo() {
+    public static String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public static void setTitulo(String titulo) {
+        Compromisso_Classe.titulo = titulo;
     }
 
-    public String getDescricao() {
+    public static String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public static void setDescricao(String descricao) {
+        Compromisso_Classe.descricao = descricao;
     }
 
-    public String getDtInicio() {
+    public static Date getDtInicio() {
         return DtInicio;
     }
 
-    public void setDtInicio(String DtInicio) {
-        this.DtInicio = DtInicio;
+    public static void setDtInicio(Date DtInicio) {
+        Compromisso_Classe.DtInicio = DtInicio;
     }
 
-    public String getDtFim() {
+    public static Date getDtFim() {
         return DtFim;
     }
 
-    public void setDtFim(String DtFim) {
-        this.DtFim = DtFim;
+    public static void setDtFim(Date DtFim) {
+        Compromisso_Classe.DtFim = DtFim;
     }
 
     public Contato_Classe getContato_classe() {
@@ -91,5 +92,5 @@ public class Compromisso_Classe {
     public void setEndereco_classe(Endereco_Classe endereco_classe) {
         this.endereco_classe = endereco_classe;
     }
-    
+
 }
