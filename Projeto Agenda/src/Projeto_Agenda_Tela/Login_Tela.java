@@ -171,14 +171,19 @@ public class Login_Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void BotaoIrCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIrCadastroActionPerformed
+<<<<<<< HEAD
         Cadastro_Tela cadastrotela = new Cadastro_Tela();
 
+=======
+        Cadastro_Tela cadastroVamos = new Cadastro_Tela();
+        
+>>>>>>> 501a5162c3b09f98f3e0d0b9e21870854171c59f
         this.setVisible(false);
-        cadastrotela.setLocationRelativeTo(null);
-        cadastrotela.setVisible(true);
+        cadastroVamos.setVisible(true);
     }//GEN-LAST:event_BotaoIrCadastroActionPerformed
 
     private void BotaoAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAcessarActionPerformed
+<<<<<<< HEAD
         String query = "SELECT UsuarioNome, Senha from Usuario WHERE IdUsuario = \"1\" AND UsuarioNome = ? AND Senha = ?;";
         PreparedStatement ps;
         ResultSet rs;
@@ -234,6 +239,15 @@ public class Login_Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_InserirSenhaActionPerformed
 
+=======
+        PaginaPrincpalAgenda_Tela AgendaPrincipal = new PaginaPrincpalAgenda_Tela() ;
+        
+        this.setVisible(false);
+        AgendaPrincipal.setLocationRelativeTo(null);
+        AgendaPrincipal.setVisible(true);
+    }//GEN-LAST:event_BotaoAcessarActionPerformed
+
+>>>>>>> 501a5162c3b09f98f3e0d0b9e21870854171c59f
     /**
      * @param args the command line arguments
      */
