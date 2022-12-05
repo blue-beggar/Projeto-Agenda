@@ -19,28 +19,28 @@ public class Endereco_Classe {
     }
 
 
-    public static String getBairro() {
+    public  String getBairro() {
         return bairro;
     }
 
-    public static void setBairro(String bairro) {
-        Endereco_Classe.bairro = bairro;
+    public  void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public static int getCep() {
+    public  int getCep() {
         return cep;
     }
 
-    public static void setCep(int cep) {
-        Endereco_Classe.cep = cep;
+    public  void setCep(int cep) {
+        this.cep = cep;
     }
 
-    public static int getIdEndereco() {
+    public  int getIdEndereco() {
         return IdEndereco;
     }
 
-    public static void setIdEndereco(int IdEndereco) {
-        Endereco_Classe.IdEndereco = IdEndereco;
+    public  void setIdEndereco(int IdEndereco) {
+        this.IdEndereco = IdEndereco;
     }
 
     

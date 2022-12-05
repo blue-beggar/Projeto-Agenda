@@ -23,28 +23,28 @@ public class Comunicacao_Classe {
         Comunicacao_Classe.IdComunicacao = IdComunicacao;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public static void setEmail(String email) {
-        Comunicacao_Classe.email = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public static long getTelefone1() {
+    public long getTelefone1() {
         return telefone1;
     }
 
-    public static void setTelefone1(long telefone1) {
-        Comunicacao_Classe.telefone1 = telefone1;
+    public void setTelefone1(long telefone1) {
+        this.telefone1 = telefone1;
     }
 
-    public static long getTelefone2() {
+    public  long getTelefone2() {
         return telefone2;
     }
 
-    public static void setTelefone2(long telefone2) {
-        Comunicacao_Classe.telefone2 = telefone2;
+    public  void setTelefone2(long telefone2) {
+        this.telefone2 = telefone2;
     }
 
 }

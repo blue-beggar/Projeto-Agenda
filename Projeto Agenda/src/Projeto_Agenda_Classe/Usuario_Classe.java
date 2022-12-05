@@ -56,12 +56,12 @@ public class Usuario_Classe {
         Usuario_Classe.nomeU = nomeU;
     }
 
-    public static String getSenha() {
+    public String getSenha() {
         return senha;
     }
 
-    public static void setSenha(String senha) {
-        Usuario_Classe.senha = senha;
+    public  void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public static Date getData_nascU() {

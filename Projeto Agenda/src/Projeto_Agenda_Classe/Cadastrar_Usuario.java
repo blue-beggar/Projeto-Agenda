@@ -29,20 +29,30 @@ public class Cadastrar_Usuario {
     public void setCompromisso(ArrayList<Comunicacao_Classe> newComunicacao) {
         this.comunicacao = newComunicacao;
     }
-
+    
+    private ArrayList<Comunicacao_Classe> CadComunicGet;
+    private ArrayList<Usuario_Classe> CadUsuarioGet;
+    private ArrayList<Endereco_Classe> CadEnderecoGet;
+    
+    public void getArrayComunic(ArrayList<Comunicacao_Classe> CadComunic, ArrayList<Usuario_Classe> CadUsuario, ArrayList<Endereco_Classe> CadEndereco){
+        this.CadComunicGet = CadComunic;
+        this.CadEnderecoGet = CadEndereco;
+        this.CadUsuarioGet = CadUsuario;
+    }
+    
     public boolean CadastrarU_TbC() {
         Connection con;
 
-        String query = "INSERT INTO Comunicacao VALUES (default, ?, ?, ?);";
+        String query = "INSERT INTO Comunicacao VALUES(default, ?, ?, ?);";
         PreparedStatement ps;
         try {
             con = ConnectionFactory.getConnection();
             con.setAutoCommit(false);
 
             ps = con.prepareStatement(query);
-            ps.setString(1, this.comunicacao.get(0).getEmail());
-            ps.setLong(2, this.comunicacao.get(0).getTelefone1());
-            ps.setLong(3, this.comunicacao.get(0).getTelefone2());
+            ps.setString(1, this.CadComunicGet.get(0).getEmail());
+            ps.setLong(2, this.CadComunicGet.get(0).getTelefone1());
+            ps.setLong(3, this.CadComunicGet.get(0).getTelefone2());
             ps.execute();
 
             con.commit();
@@ -77,9 +87,11 @@ public class Cadastrar_Usuario {
                 IdComunicacao_fk = rs.getString("IdComunicacao");
             }
             System.out.println(IdComunicacao_fk);
+            
             ps.close();
 
             System.out.println("Select ID");
+            
             
             return true;
         } catch (SQLException ex) {
@@ -91,18 +103,19 @@ public class Cadastrar_Usuario {
     public boolean CadastrarU_TbE() {
         Connection con;
 
-        String query = "INSERT INTO Endereco VALUES (default, ?, ?, ?, ?, ?, ?);";
+        String query = "INSERT INTO Endereco VALUES(default, ?, ?, ?, ?, ?, ?);";
         PreparedStatement ps;
         try {
             con = ConnectionFactory.getConnection();
             con.setAutoCommit(false);
 
             ps = con.prepareStatement(query);
-            ps.setString(1, this.endereco.get(0).getLogradouro());
-            ps.setInt(2, this.endereco.get(0).getCep());
-            ps.setString(3, this.endereco.get(0).getComplemento());
-            ps.setString(4, this.endereco.get(0).getBairro());
-            ps.setString(5, this.endereco.get(0).getCidade());
+            ps.setString(1, this.CadEnderecoGet.get(0).getLogradouro());
+            ps.setInt(2, this.CadEnderecoGet.get(0).getCep());
+            ps.setString(3, this.CadEnderecoGet.get(0).getComplemento());
+            ps.setString(4, this.CadEnderecoGet.get(0).getBairro());
+            ps.setString(5, this.CadEnderecoGet.get(0).getCidade());
+            ps.setString(6, this.CadEnderecoGet.get(0).getEstado());
             ps.execute();
 
             con.commit();
@@ -139,7 +152,6 @@ public class Cadastrar_Usuario {
             ps.close();
 
             System.out.println("ID endereço");
-            CadastrarU_TbU();
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -150,19 +162,19 @@ public class Cadastrar_Usuario {
     public boolean CadastrarU_TbU() {
         Connection con;
 
-        String query = "INSERT INTO USUARIO VALUES (default, ?, ?, ?, ?, ?, ?);";
+        String query = "INSERT INTO Usuario VALUES (default, ?, ?, ?, ?, ?, ?);";
         PreparedStatement ps;
 
-        java.sql.Date dataSql = new java.sql.Date(this.usuario.get(0).getData_nascU().getTime());
+        java.sql.Date dataSql = new java.sql.Date(this.CadUsuarioGet.get(0).getData_nascU().getTime());
         try {
             con = ConnectionFactory.getConnection();
             con.setAutoCommit(false);
-
             ps = con.prepareStatement(query);
-            ps.setString(1, this.usuario.get(0).getUsuarioNomeU());
-            ps.setString(2, this.usuario.get(0).getNomeU());
+            
+            ps.setString(1, this.CadUsuarioGet.get(0).getUsuarioNomeU());
+            ps.setString(2, this.CadUsuarioGet.get(0).getNomeU());
             ps.setDate(3, dataSql);
-            ps.setString(4, this.usuario.get(0).getSenha());
+            ps.setString(4, this.CadUsuarioGet.get(0).getSenha());
             ps.setInt(5, Integer.parseInt(IdEndereco_fk));
             ps.setInt(6, Integer.parseInt(IdComunicacao_fk));
             ps.execute();

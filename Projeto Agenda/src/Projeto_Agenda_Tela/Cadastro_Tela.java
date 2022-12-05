@@ -485,13 +485,14 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     Cadastrar_Usuario cad = new Cadastrar_Usuario();
-    
+
     private void BotaoProximo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo1ActionPerformed
         usuario = CriarUsuario.getText();
-
+        senhahex = CriarSenha.getPassword().toString();
         Usuario_Classe loginUsuario = new Usuario_Classe(this.usuario, this.senhahex);
 
         CadUsuario.add(loginUsuario);
+        CadUsuario.get(0).setSenha(senhahex);
 
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_BotaoProximo1ActionPerformed
@@ -516,15 +517,13 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         Comunicacao_Classe DadosComunic = new Comunicacao_Classe(this.telefone1, this.telefone2, this.email);
 
         CadComunic.add(DadosComunic);
-        CadUsuario.add(DadosUsuario);
-        CadUsuario.get(0).setNomeU(nome);
-        CadUsuario.get(0).setData_nascU(data_nasc);
         CadComunic.get(0).setTelefone1(telefone1);
         CadComunic.get(0).setTelefone2(telefone2);
         CadComunic.get(0).setEmail(email);
+        CadUsuario.add(DadosUsuario);
+        CadUsuario.get(0).setNomeU(nome);
+        CadUsuario.get(0).setData_nascU(data_nasc);
 
-        cad.CadastrarU_TbC();
-        
         this.jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_BotaoProximo2ActionPerformed
 
@@ -547,10 +546,23 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         Endereco_Classe DadosEnd = new Endereco_Classe(this.logradouro, this.bairro, this.cep, this.complemento, this.cidade, this.sigla_estado);
         CadEndereco.add(DadosEnd);
+        CadEndereco.get(0).setLogradouro(logradouro);
+        CadEndereco.get(0).setBairro(bairro);
+        CadEndereco.get(0).setCep(cep);
+        CadEndereco.get(0).setComplemento(complemento);
+        CadEndereco.get(0).setCidade(cidade);
+        CadEndereco.get(0).setEstado(sigla_estado);
 
-        Cadastrar_Usuario cad = new Cadastrar_Usuario();
-        cad.CadastrarU_TbC();
+        System.out.println(CadEndereco.get(0).getLogradouro());
         
+        Cadastrar_Usuario cad = new Cadastrar_Usuario();
+
+        cad.getArrayComunic(CadComunic, CadUsuario, CadEndereco);
+
+        cad.CadastrarU_TbC();
+        cad.CadastrarU_TbE();
+        cad.CadastrarU_TbU();
+
         Login_Tela logintela = new Login_Tela();
 
         this.setVisible(false);
