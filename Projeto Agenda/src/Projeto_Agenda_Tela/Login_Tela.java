@@ -56,6 +56,11 @@ public class Login_Tela extends javax.swing.JFrame {
 
         BotaoAcessar.setBackground(new java.awt.Color(102, 255, 255));
         BotaoAcessar.setText("Acessar");
+        BotaoAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoAcessarActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 153));
         jCheckBox1.setText("Lembrar de Mim");
@@ -147,12 +152,19 @@ public class Login_Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void BotaoIrCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIrCadastroActionPerformed
-        Cadastro_Tela cadastrotela = new Cadastro_Tela();
+        Cadastro_Tela cadastroVamos = new Cadastro_Tela();
         
         this.setVisible(false);
-        cadastrotela.setLocationRelativeTo(null);
-        cadastrotela.setVisible(true);
+        cadastroVamos.setVisible(true);
     }//GEN-LAST:event_BotaoIrCadastroActionPerformed
+
+    private void BotaoAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAcessarActionPerformed
+        PaginaPrincpalAgenda_Tela AgendaPrincipal = new PaginaPrincpalAgenda_Tela() ;
+        
+        this.setVisible(false);
+        AgendaPrincipal.setLocationRelativeTo(null);
+        AgendaPrincipal.setVisible(true);
+    }//GEN-LAST:event_BotaoAcessarActionPerformed
 
     /**
      * @param args the command line arguments
