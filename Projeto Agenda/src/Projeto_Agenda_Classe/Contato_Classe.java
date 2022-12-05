@@ -28,12 +28,6 @@ public class Contato_Classe {
         return 0;
     }
 
-    @Override
-    public String toString() {
-        //nome,cpf,data_nasc,endereco,numero,cidade,estado
-        return this.nomeC;
-    }
-
     public static String getNomeC() {
         return nomeC;
     }

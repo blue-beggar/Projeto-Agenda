@@ -25,11 +25,6 @@ public class Grupo_Classe {
         return 0;
     }
 
-    @Override
-    public String toString() {
-        return this.titulo;
-    }
-
     public static int getIdGrupo() {
         return IdGrupo;
     }

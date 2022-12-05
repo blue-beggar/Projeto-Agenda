@@ -5,24 +5,45 @@ package Projeto_Agenda_Classe;
  */
 public class Endereco_Classe {
 
-    public static String logradouro, bairro,  complemento, cidade, estado;
-    public static int CEP, IdEndereco;
+    public static String logradouro, bairro, complemento, cidade, estado;
+    public static int cep, IdEndereco;
 
     
-    public Endereco_Classe(String logradouro, String bairro, int CEP, String complemento, String cidade,String estado) {
+    public Endereco_Classe(String logradouro, String bairro, int cep, String complemento, String cidade,String estado) {
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.complemento = complemento;
-        this.CEP = CEP;
+        this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
     }
 
-    @Override
-    public String toString() {
-        return this.logradouro + "," + this.CEP + "," + this.complemento + "," + this.cidade + "," + this.estado;
+
+    public static String getBairro() {
+        return bairro;
     }
 
+    public static void setBairro(String bairro) {
+        Endereco_Classe.bairro = bairro;
+    }
+
+    public static int getCep() {
+        return cep;
+    }
+
+    public static void setCep(int cep) {
+        Endereco_Classe.cep = cep;
+    }
+
+    public static int getIdEndereco() {
+        return IdEndereco;
+    }
+
+    public static void setIdEndereco(int IdEndereco) {
+        Endereco_Classe.IdEndereco = IdEndereco;
+    }
+
+    
     public String getLogradouro() {
         return logradouro;
     }
@@ -54,13 +75,4 @@ public class Endereco_Classe {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
-
-    public int getCEP() {
-        return CEP;
-    }
-
-    public void setCEP(int CEP) {
-        this.CEP = CEP;
-    }
-
 }

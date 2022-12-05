@@ -32,12 +32,7 @@ public class Compromisso_Classe {
 
         return 0;
     }
-
-    @Override
-    public String toString() {
-        return this.titulo + "," + this.descricao + "," + this.DtInicio + "," + this.DtFim;
-    }
-
+        
     public static int getIdCompromisso() {
         return IdCompromisso;
     }

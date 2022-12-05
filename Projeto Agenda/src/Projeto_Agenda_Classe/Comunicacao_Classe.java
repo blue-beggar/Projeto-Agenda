@@ -14,12 +14,7 @@ public class Comunicacao_Classe {
         this.telefone1 = telefone1;
         this.telefone2 = telefone2;
     }
-
-    @Override
-    public String toString() {
-        return this.email + "," + this.telefone1 + "," + this.telefone2 + ",";
-    }
-
+    
     public static int getIdComunicacao() {
         return IdComunicacao;
     }

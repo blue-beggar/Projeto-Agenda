@@ -29,8 +29,6 @@ public class Usuario_Classe {
         this.nomeU = Nome;
     }
     
-    
-
     public int compareTo(Usuario_Classe x) {
         if (this.nomeU.compareTo(x.nomeU) > 0) {
             return 1;
@@ -41,12 +39,7 @@ public class Usuario_Classe {
 
         return 0;
     }
-
-    @Override
-    public String toString() {
-        return this.nomeU + "," + this.data_nascU;//senha
-    }
-
+    
     public static String getUsuarioNomeU() {
         return usuarioNomeU;
     }
