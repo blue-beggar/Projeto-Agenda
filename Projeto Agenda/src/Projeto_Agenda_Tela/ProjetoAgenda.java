@@ -1,7 +1,4 @@
-package Projeto_Agenda_Classe;
-
-
-import Projeto_Agenda_Tela.Login_Tela;
+package Projeto_Agenda_Tela;
 
 /**
  * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza

@@ -4,9 +4,11 @@
  */
 package Projeto_Agenda_Tela;
 
-import Projeto_Agenda_Classe.Contacto_Classe;
+
 import Projeto_Agenda_Classe.Endereco_Classe;
 import Projeto_Agenda_Classe.Usuario_Classe;
+import Projeto_Agenda_Classe.Cadastrar_Usuario;
+import Projeto_Agenda_Classe.Comunicacao_Classe;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,7 +18,7 @@ import java.util.Date;
  */
 public class Cadastro_Tela extends javax.swing.JFrame {
     ArrayList<Usuario_Classe> CadUsuario = new ArrayList<Usuario_Classe>(1);
-    ArrayList<Contacto_Classe> CadContacto = new ArrayList<Contacto_Classe>(1);
+    ArrayList<Comunicacao_Classe> CadComunic = new ArrayList<Comunicacao_Classe>(1);
     ArrayList<Endereco_Classe> CadEndereco = new ArrayList<Endereco_Classe>(1);
    
     private String Usuario;
@@ -110,7 +112,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel2.setText("Criação do Usuário");
 
         BotaoProximo1.setBackground(new java.awt.Color(102, 255, 255));
@@ -127,10 +129,13 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel1.setText("Usuario");
 
+        jLabel4.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel4.setText("Senha");
 
+        jLabel5.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel5.setText("Confirmação de Senha");
 
         BotaoVoltarLogin.setBackground(new java.awt.Color(102, 255, 255));
@@ -158,11 +163,11 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addComponent(BotaoProximo1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 178, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(167, 167, 167))
+                .addGap(158, 158, 158))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(96, 96, 96)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
@@ -170,16 +175,16 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CriarUsuario)
-                    .addComponent(CriarSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(CriarConfirmarSenha))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(CriarSenha)
+                    .addComponent(CriarConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(44, 44, 44)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -191,7 +196,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(CriarConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoProximo1)
                     .addComponent(BotaoVoltarLogin))
@@ -202,7 +207,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel3.setText("Dados do Usuário");
 
         BotaoAnterior1.setBackground(new java.awt.Color(102, 255, 255));
@@ -221,12 +226,16 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel6.setText("Nome Completo");
 
+        jLabel7.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel7.setText("Data de Nascimento");
 
+        jLabel8.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel8.setText("E-mail");
 
+        jLabel9.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel9.setText("Telefone 1");
 
         CriarNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +244,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel14.setText("Telefone 2");
 
         CriarTelefone2Usuario.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +266,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                         .addComponent(BotaoProximo2)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 108, Short.MAX_VALUE)
+                        .addGap(0, 111, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
@@ -309,7 +319,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(CriarTelefone2Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoAnterior1)
                     .addComponent(BotaoProximo2))
@@ -328,13 +338,16 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Constantia", 0, 18)); // NOI18N
         jLabel10.setText("Endereço");
 
+        jLabel11.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel11.setText("Logradouro");
 
+        jLabel12.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel12.setText("CEP");
 
+        jLabel13.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel13.setText("Complemento");
 
         BotaoConcluirCadastro.setBackground(new java.awt.Color(102, 255, 255));
@@ -351,6 +364,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel15.setText("Cidade");
 
         CriarEstadoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
@@ -366,6 +380,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
             }
         });
 
+        jLabel16.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel16.setText("Bairro");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -402,7 +417,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                                         .addComponent(CriarCidadeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(CriarEstadoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(BotaoConcluirCadastro)
                 .addContainerGap())
         );
@@ -419,7 +434,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CriarBairroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CriarCEPUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
@@ -482,9 +497,9 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         Email = CriarEmailUsuario.getText();
         
         Usuario_Classe DadosUsuario = new Usuario_Classe(this.Nome, this.Data_nasc);
-        Contacto_Classe DadosComunic = new Contacto_Classe (this.Telefone1, this.Telefone2, this.Email);
+        Comunicacao_Classe DadosComunic = new Comunicacao_Classe (this.Telefone1, this.Telefone2, this.Email);
         
-        CadContacto.add(DadosComunic);
+        CadComunic.add(DadosComunic);
         CadUsuario.add(DadosUsuario);
         CadUsuario.get(0).setNomeU(Nome);
         CadUsuario.get(0).setData_nascU(Data_nasc);
@@ -513,6 +528,8 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         CadEndereco.add(DadosEnd);
         
         Login_Tela logintela = new Login_Tela();
+        
+        
 
         this.setVisible(false);
         logintela.setLocationRelativeTo(null);

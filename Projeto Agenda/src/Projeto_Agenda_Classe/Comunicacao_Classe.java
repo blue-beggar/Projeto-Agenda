@@ -9,10 +9,10 @@ public class Comunicacao_Classe {
     public static String email;
     public static long telefone1, telefone2;
 
-    public Comunicacao_Classe(String telefone1, String telefone2, String email) {
+    public Comunicacao_Classe(long telefone1, long telefone2, String email) {
         this.email = email;
-        this.telefone1 = Long.parseLong(telefone1);
-        this.telefone2 = Long.parseLong(telefone2);
+        this.telefone1 = telefone1;
+        this.telefone2 = telefone2;
     }
 
     @Override
