@@ -8,7 +8,8 @@ import java.util.Date;
 public class Contato_Classe {
 
     public static String nomeC;
-    public static Date ndata_nascC;
+    public static Date data_nascC;
+    public static boolean grupado;
     public Comunicacao_Classe comunicacao_classe;
     public Endereco_Classe endereco_classe;
     public Grupo_Classe grupo_classe;
@@ -28,6 +29,15 @@ public class Contato_Classe {
         return 0;
     }
 
+    public static boolean isGrupado() {
+        return grupado;
+    }
+
+    public static void setGrupado(boolean grupado) {
+        Contato_Classe.grupado = grupado;
+    }
+
+    
     public static String getNomeC() {
         return nomeC;
     }
@@ -36,12 +46,12 @@ public class Contato_Classe {
         Contato_Classe.nomeC = nomeC;
     }
 
-    public static Date getNdata_nascC() {
-        return ndata_nascC;
+    public static Date getData_nascC() {
+        return data_nascC;
     }
 
-    public static void setNdata_nascC(Date ndata_nascC) {
-        Contato_Classe.ndata_nascC = ndata_nascC;
+    public static void setData_nascC(Date data_nascC) {
+        Contato_Classe.data_nascC = data_nascC;
     }
 
     public Comunicacao_Classe getComunicacao_classe() {

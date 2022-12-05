@@ -10,16 +10,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class Cadastrar_Usuario {
+public class Cadastrar_Contato {
 
-    private static ArrayList<Usuario_Classe> usuario;
+    private static ArrayList<Contato_Classe> contato;
     private static ArrayList<Endereco_Classe> endereco;
     private static ArrayList<Comunicacao_Classe> comunicacao;
     private static String IdEndereco_fk;
     private static String IdComunicacao_fk;
 
-    public void setUsuario(ArrayList<Usuario_Classe> newUsuario) {
-        this.usuario = newUsuario;
+    public void setUsuario(ArrayList<Contato_Classe> newContato) {
+        this.contato = newContato;
     }
 
     public void setEndereco(ArrayList<Endereco_Classe> newEndereco) {
@@ -30,7 +30,7 @@ public class Cadastrar_Usuario {
         this.comunicacao = newComunicacao;
     }
 
-    public boolean CadastrarU_TbC() {
+    public boolean CadastrarCon_TbCom() {
         Connection con;
 
         String query = "INSERT INTO Comunicacao VALUES (default, ?, ?, ?);";
@@ -61,7 +61,7 @@ public class Cadastrar_Usuario {
     public boolean Select_IdC() {
         Connection con;
 
-        String query = "SELECT IdComunicacao FROM Comunicacao WHERE IdComunicacao = \"1\"";
+        String query = "SELECT IdComunicacao FROM Comunicacao WHERE IdComunicacao = ?";
         PreparedStatement ps;
         ResultSet rs;
         try {
@@ -81,6 +81,7 @@ public class Cadastrar_Usuario {
 
             System.out.println("Select ID");
             
+            CadastrarC_TbE();
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -88,7 +89,7 @@ public class Cadastrar_Usuario {
         }
     }
 
-    public boolean CadastrarU_TbE() {
+    public boolean CadastrarC_TbE() {
         Connection con;
 
         String query = "INSERT INTO Endereco VALUES (default, ?, ?, ?, ?, ?, ?);";
@@ -120,7 +121,7 @@ public class Cadastrar_Usuario {
     public boolean Select_IdE() {
         Connection con;
 
-        String query = "SELECT IdEndereco FROM Endereco WHERE IdEndereco = \"1\"";
+        String query = "SELECT IdEndereco FROM Endereco WHERE IdEndereco = ?;";
         PreparedStatement ps;
         ResultSet rs;
         try {
@@ -139,7 +140,7 @@ public class Cadastrar_Usuario {
             ps.close();
 
             System.out.println("ID endereço");
-            CadastrarU_TbU();
+            CadastrarCon_TbCon();
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -147,22 +148,21 @@ public class Cadastrar_Usuario {
         }
     }
 
-    public boolean CadastrarU_TbU() {
+    public boolean CadastrarCon_TbCon() {
         Connection con;
 
-        String query = "INSERT INTO USUARIO VALUES (default, ?, ?, ?, ?, ?, ?);";
+        String query = "INSERT INTO Contato VALUES (default, ?, ?, default, ?, ?);";
         PreparedStatement ps;
 
-        java.sql.Date dataSql = new java.sql.Date(this.usuario.get(0).getData_nascU().getTime());
+        java.sql.Date dataSql = new java.sql.Date(this.contato.get(0).getData_nascC().getTime());
         try {
             con = ConnectionFactory.getConnection();
             con.setAutoCommit(false);
 
             ps = con.prepareStatement(query);
-            ps.setString(1, this.usuario.get(0).getUsuarioNomeU());
-            ps.setString(2, this.usuario.get(0).getNomeU());
-            ps.setDate(3, dataSql);
-            ps.setString(4, this.usuario.get(0).getSenha());
+            ps.setString(1, this.contato.get(0).getNomeC());
+            ps.setDate(2, dataSql);
+            //ps.isGrupado(3, this.contato.isGrupado(this.contato));
             ps.setInt(5, Integer.parseInt(IdEndereco_fk));
             ps.setInt(6, Integer.parseInt(IdComunicacao_fk));
             ps.execute();
@@ -170,7 +170,7 @@ public class Cadastrar_Usuario {
             con.commit();
             ps.close();
 
-            System.out.println("Cadastro feito com sucesso! Realize o login para continuar");
+            System.out.println("Cadastro feito com sucesso!");
             return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());

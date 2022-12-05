@@ -1,13 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Projeto_Agenda_Tela;
 
 /**
- *
- * @author cg3017885
+ * @author Eduardo Luiz Sales do Prado / João Pedro Bettin de Souza
  */
+import Projeto_Agenda_Classe.ConnectionFactory;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.io.UnsupportedEncodingException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.security.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+
 public class Login_Tela extends javax.swing.JFrame {
 
     /**
@@ -56,6 +69,11 @@ public class Login_Tela extends javax.swing.JFrame {
 
         BotaoAcessar.setBackground(new java.awt.Color(102, 255, 255));
         BotaoAcessar.setText("Acessar");
+        BotaoAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoAcessarActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 153));
         jCheckBox1.setText("Lembrar de Mim");
@@ -70,6 +88,12 @@ public class Login_Tela extends javax.swing.JFrame {
         BotaoIrCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoIrCadastroActionPerformed(evt);
+            }
+        });
+
+        InserirSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InserirSenhaActionPerformed(evt);
             }
         });
 
@@ -137,7 +161,7 @@ public class Login_Tela extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    Connection con;
     private void InserirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_InserirUsuarioActionPerformed
@@ -148,11 +172,67 @@ public class Login_Tela extends javax.swing.JFrame {
 
     private void BotaoIrCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIrCadastroActionPerformed
         Cadastro_Tela cadastrotela = new Cadastro_Tela();
-        
+
         this.setVisible(false);
         cadastrotela.setLocationRelativeTo(null);
         cadastrotela.setVisible(true);
     }//GEN-LAST:event_BotaoIrCadastroActionPerformed
+
+    private void BotaoAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoAcessarActionPerformed
+        String query = "SELECT UsuarioNome, Senha from Usuario WHERE IdUsuario = \"1\" AND UsuarioNome = ? AND Senha = ?;";
+        PreparedStatement ps;
+        ResultSet rs;
+        String usuario = this.InserirUsuario.getText();
+        try {
+            MessageDigest cryptSenha = MessageDigest.getInstance("SHA-256");
+            byte messageDigestSenha[] = cryptSenha.digest(String.valueOf(this.InserirSenha.getPassword()).getBytes("UTF-8"));
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : messageDigestSenha) {
+                hexString.append(String.format("%02X", 0xFF & b));
+            }
+            String senha_string = hexString.toString();
+
+            ConnectionFactory cf = new ConnectionFactory();
+            con = cf.getConnection();
+            con.setAutoCommit(false);
+            ps = con.prepareStatement(query);
+            ps.setString(1, usuario);
+            ps.setString(2, senha_string);
+            rs = ps.executeQuery();
+            con.commit();
+
+            int idUsuario = 0;
+            String usuarioBD = "";
+            String senhaBD = "";
+
+            while (rs.next()) {
+                idUsuario = rs.getInt("IdUsuario");
+                usuarioBD = rs.getString("UsuarioNome");
+                senhaBD = rs.getString("Senha");
+            }
+
+            if (usuarioBD == "") {
+                JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+            } else {
+                System.out.println(usuarioBD);
+            }
+
+            ps.close();
+
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Login_Tela.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login_Tela.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Login_Tela.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_BotaoAcessarActionPerformed
+
+    private void InserirSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InserirSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InserirSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,16 +248,24 @@ public class Login_Tela extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login_Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_Tela.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login_Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_Tela.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login_Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_Tela.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login_Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login_Tela.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -189,6 +277,7 @@ public class Login_Tela extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAcessar;

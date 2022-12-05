@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Projeto_Agenda_Tela;
-
 
 import Projeto_Agenda_Classe.Endereco_Classe;
 import Projeto_Agenda_Classe.Usuario_Classe;
@@ -17,27 +12,28 @@ import java.util.Date;
  * @author cg3017885
  */
 public class Cadastro_Tela extends javax.swing.JFrame {
+
     ArrayList<Usuario_Classe> CadUsuario = new ArrayList<Usuario_Classe>(1);
     ArrayList<Comunicacao_Classe> CadComunic = new ArrayList<Comunicacao_Classe>(1);
     ArrayList<Endereco_Classe> CadEndereco = new ArrayList<Endereco_Classe>(1);
-   
-    private String Usuario;
-    private String Senhahex;
-    private String SenhahexConfirm;
-    
-    private String Nome;
-    private Date Data_nasc;
-    private long Telefone1;
-    private long Telefone2;
-    private String Email;
-    
-    private String Logradouro; 
-    private String Bairro;
-    private int CEP;
-    private String Complemento;
-    private String Cidade;     
-    private String Sigla_estado;
-    
+
+    private String usuario;
+    private String senhahex;
+    private String senhahexConfirm;
+
+    private String nome;
+    private Date data_nasc;
+    private long telefone1;
+    private long telefone2;
+    private String email;
+
+    private String logradouro;
+    private String bairro;
+    private int cep;
+    private String complemento;
+    private String cidade;
+    private String sigla_estado;
+
     public Cadastro_Tela() {
         initComponents();
     }
@@ -52,6 +48,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -156,28 +153,33 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BotaoVoltarLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotaoProximo1)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(158, 158, 158))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BotaoVoltarLogin)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CriarUsuario)
-                    .addComponent(CriarSenha)
-                    .addComponent(CriarConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BotaoProximo1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CriarUsuario)
+                            .addComponent(CriarSenha)
+                            .addComponent(CriarConfirmarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 136, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +285,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(CriarDataNasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(CriarDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
@@ -304,10 +306,10 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(CriarNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
                     .addComponent(CriarDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(CriarEmailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -319,7 +321,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(CriarTelefone2Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoAnterior1)
                     .addComponent(BotaoProximo2))
@@ -349,6 +351,18 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel13.setText("Complemento");
+
+        CriarLogradouroUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CriarLogradouroUsuarioActionPerformed(evt);
+            }
+        });
+
+        CriarComplementoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CriarComplementoUsuarioActionPerformed(evt);
+            }
+        });
 
         BotaoConcluirCadastro.setBackground(new java.awt.Color(102, 255, 255));
         BotaoConcluirCadastro.setText("Concluir");
@@ -470,13 +484,15 @@ public class Cadastro_Tela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Cadastrar_Usuario cad = new Cadastrar_Usuario();
+    
     private void BotaoProximo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo1ActionPerformed
-        Usuario = CriarUsuario.getText();
-        
-        Usuario_Classe loginUsuario = new Usuario_Classe(this.Usuario,this.Senhahex);
-        
+        usuario = CriarUsuario.getText();
+
+        Usuario_Classe loginUsuario = new Usuario_Classe(this.usuario, this.senhahex);
+
         CadUsuario.add(loginUsuario);
-        
+
         this.jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_BotaoProximo1ActionPerformed
 
@@ -485,24 +501,29 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoAnterior1ActionPerformed
 
     private void BotaoProximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProximo2ActionPerformed
-        Nome = CriarNomeUsuario.getText();
-        Data_nasc = CriarDataNasc.getDate();
-        Telefone1 = Long.parseLong(CriarTelefone1Usuario.getText());
-        
-        if(CriarTelefone2Usuario.getText().isEmpty()){
-            Telefone2 = 0;
-        }else{       
-            Telefone2 = Integer.parseInt(CriarTelefone2Usuario.getText()); 
+        nome = CriarNomeUsuario.getText();
+        data_nasc = CriarDataNasc.getDate();
+        telefone1 = Long.parseLong(CriarTelefone1Usuario.getText());
+
+        if (CriarTelefone2Usuario.getText().isEmpty()) {
+            telefone2 = 0;
+        } else {
+            telefone2 = Integer.parseInt(CriarTelefone2Usuario.getText());
         }
-        Email = CriarEmailUsuario.getText();
-        
-        Usuario_Classe DadosUsuario = new Usuario_Classe(this.Nome, this.Data_nasc);
-        Comunicacao_Classe DadosComunic = new Comunicacao_Classe (this.Telefone1, this.Telefone2, this.Email);
-        
+        email = CriarEmailUsuario.getText();
+
+        Usuario_Classe DadosUsuario = new Usuario_Classe(this.nome, this.data_nasc);
+        Comunicacao_Classe DadosComunic = new Comunicacao_Classe(this.telefone1, this.telefone2, this.email);
+
         CadComunic.add(DadosComunic);
         CadUsuario.add(DadosUsuario);
-        CadUsuario.get(0).setNomeU(Nome);
-        CadUsuario.get(0).setData_nascU(Data_nasc);
+        CadUsuario.get(0).setNomeU(nome);
+        CadUsuario.get(0).setData_nascU(data_nasc);
+        CadComunic.get(0).setTelefone1(telefone1);
+        CadComunic.get(0).setTelefone2(telefone2);
+        CadComunic.get(0).setEmail(email);
+
+        cad.CadastrarU_TbC();
         
         this.jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_BotaoProximo2ActionPerformed
@@ -517,19 +538,20 @@ public class Cadastro_Tela extends javax.swing.JFrame {
 
     private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
 
-        Logradouro = CriarLogradouroUsuario.getText();
-        Bairro = CriarBairroUsuario.getText();
-        CEP = Integer.parseInt(CriarCEPUsuario.getText());
-        Complemento = CriarComplementoUsuario.getText();
-        Cidade = CriarCidadeUsuario.getText();
-        Sigla_estado = CriarEstadoUsuario.getSelectedItem().toString();
-        
-        Endereco_Classe DadosEnd = new Endereco_Classe(this.Logradouro, this.Bairro, this.CEP, this.Complemento, this.Cidade, this.Sigla_estado);
+        logradouro = CriarLogradouroUsuario.getText();
+        bairro = CriarBairroUsuario.getText();
+        cep = Integer.parseInt(CriarCEPUsuario.getText());
+        complemento = CriarComplementoUsuario.getText();
+        cidade = CriarCidadeUsuario.getText();
+        sigla_estado = CriarEstadoUsuario.getSelectedItem().toString();
+
+        Endereco_Classe DadosEnd = new Endereco_Classe(this.logradouro, this.bairro, this.cep, this.complemento, this.cidade, this.sigla_estado);
         CadEndereco.add(DadosEnd);
+
+        Cadastrar_Usuario cad = new Cadastrar_Usuario();
+        cad.CadastrarU_TbC();
         
         Login_Tela logintela = new Login_Tela();
-        
-        
 
         this.setVisible(false);
         logintela.setLocationRelativeTo(null);
@@ -567,6 +589,14 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private void CriarBairroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarBairroUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CriarBairroUsuarioActionPerformed
+
+    private void CriarComplementoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarComplementoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CriarComplementoUsuarioActionPerformed
+
+    private void CriarLogradouroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CriarLogradouroUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CriarLogradouroUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -625,6 +655,7 @@ public class Cadastro_Tela extends javax.swing.JFrame {
     private javax.swing.JTextField CriarTelefone1Usuario;
     private javax.swing.JTextField CriarTelefone2Usuario;
     private javax.swing.JTextField CriarUsuario;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

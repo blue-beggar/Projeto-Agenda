@@ -8,11 +8,9 @@ import java.util.Date;
 public class Compromisso_Classe {
 
     public static int IdCompromisso;
-    public static String titulo, descricao;
+    public static String titulo, descricao, localiza;
     public static Date DtInicio, DtFim;
     public Contato_Classe contato_classe;
-    public Usuario_Classe usuario_classe;
-    public Endereco_Classe endereco_classe;
 
     public Compromisso_Classe(String titulo, String descricao, String DtInicio, String DtFim) {
         this.titulo = titulo;
@@ -32,7 +30,7 @@ public class Compromisso_Classe {
 
         return 0;
     }
-        
+
     public static int getIdCompromisso() {
         return IdCompromisso;
     }
@@ -55,6 +53,14 @@ public class Compromisso_Classe {
 
     public static void setDescricao(String descricao) {
         Compromisso_Classe.descricao = descricao;
+    }
+
+    public static String getLocaliza() {
+        return localiza;
+    }
+
+    public static void setLocaliza(String localiza) {
+        Compromisso_Classe.localiza = localiza;
     }
 
     public static Date getDtInicio() {
@@ -80,21 +86,5 @@ public class Compromisso_Classe {
     public void setContato_classe(Contato_Classe contato_classe) {
         this.contato_classe = contato_classe;
     }
-
-    public Usuario_Classe getUsuario_classe() {
-        return usuario_classe;
-    }
-
-    public void setUsuario_classe(Usuario_Classe usuario_classe) {
-        this.usuario_classe = usuario_classe;
-    }
-
-    public Endereco_Classe getEndereco_classe() {
-        return endereco_classe;
-    }
-
-    public void setEndereco_classe(Endereco_Classe endereco_classe) {
-        this.endereco_classe = endereco_classe;
-    }
-
+        
 }
