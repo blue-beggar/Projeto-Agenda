@@ -183,6 +183,7 @@ public class Login_Tela extends javax.swing.JFrame {
         PreparedStatement ps;
         ResultSet rs;
         String usuario = this.InserirUsuario.getText();
+        
         try {
             MessageDigest cryptSenha = MessageDigest.getInstance("SHA-256");
             byte messageDigestSenha[] = cryptSenha.digest(String.valueOf(this.InserirSenha.getPassword()).getBytes("UTF-8"));
@@ -216,13 +217,13 @@ public class Login_Tela extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
             } else {
                 System.out.println(usuarioBD);
+                PaginaPrincpalAgenda_Tela AgendaPrincipal = new PaginaPrincpalAgenda_Tela() ;
+                this.setVisible(false);
+                AgendaPrincipal.setLocationRelativeTo(null);
+                AgendaPrincipal.setVisible(true);
             }
 
-            PaginaPrincpalAgenda_Tela AgendaPrincipal = new PaginaPrincpalAgenda_Tela() ;
-        
-            this.setVisible(false);
-            AgendaPrincipal.setLocationRelativeTo(null);
-            AgendaPrincipal.setVisible(true);
+            
             ps.close();
 
         } catch (NoSuchAlgorithmException ex) {
